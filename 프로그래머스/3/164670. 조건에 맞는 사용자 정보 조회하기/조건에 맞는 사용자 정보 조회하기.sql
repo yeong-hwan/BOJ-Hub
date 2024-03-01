@@ -9,9 +9,9 @@ FROM
     RIGHT OUTER JOIN
     USED_GOODS_USER AS u
         ON b.WRITER_ID = u.user_id
-# GROUP BY
-#     b.Writer_id
-GROUP BY 1
+GROUP BY
+    u.user_id
+# GROUP BY 1
 
 HAVING
     COUNT(*) >= 3
