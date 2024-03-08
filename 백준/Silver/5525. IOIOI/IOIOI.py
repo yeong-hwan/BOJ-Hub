@@ -6,16 +6,17 @@ M = int(input())
 
 S = input()
 
-P = 'I'
+cursor, count, result = 0, 0, 0
 
-for _ in range(N):
-    P += "OI"
+while cursor < (M - 1):
+    if S[cursor:cursor + 3] == 'IOI':
+        count += 1
+        cursor += 2
+        if count == N:
+            result += 1
+            count -= 1
+    else:
+        cursor += 1
+        count = 0
 
-result = 0
-
-for idx in range(M-len(P)+1):
-    check = S[idx:idx+len(P)]
-    if check == P:
-        result += 1
-    
 print(result)
